@@ -1,4 +1,5 @@
 import { useState, lazy, Suspense } from 'react';
+// Docs: https://software-engineering-corner.zuehlke.com/micro-frontend-module-federation-with-vite-for-react
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
@@ -32,14 +33,12 @@ function App() {
       <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
 
       <div id='remoteFooter'>
-        <div>REMOTE FOOTER</div>
         <Suspense fallback={<div>Loading...</div>}>
           <RemoteFooter />
         </Suspense>
       </div>
 
       <div id='remoteBody'>
-        <div>REMOTE BODY</div>
         <RemoteBody />
       </div>
 
