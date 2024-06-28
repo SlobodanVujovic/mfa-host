@@ -40,11 +40,12 @@ function App() {
         <Suspense fallback={<div>Loading...</div>}>
           <RemoteFooter />
         </Suspense>
-      </div>
 
-      {/* <div id='remoteWebComponent'>
-        <vujo-component></vujo-component>
-      </div> */}
+        {/* Adding local Web component to the React component. Da bi ovo radilo moramo imati dodat JS file, u kome je definisan Web componenta, u index.html-u kroz script tag. */}
+        <div id='localWebComponent'>
+          <vujo-component></vujo-component>
+        </div>
+      </div>
     </div>
   );
 }

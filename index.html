@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,5 +9,38 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Web component from different module. -->
+    <div id="vujoWebComponent">
+      <vujo-component> </vujo-component>
+    </div>
+    <style>
+      #vujoWebComponent {
+        background-color: blue;
+        color: black;
+      }
+    </style>
+    <!-- Mora se ukljuciti JS file u kome je Web komponenta definisana da bi tag mogao da se render-uje. -->
+    <script type="module" src="src/vujoWebComponent.js"></script>
+
+    <!-- Inline web component. -->
+    <script>
+      class IsaComponent extends HTMLElement {
+        connectedCallback() {
+          this.innerHTML = 'Hello from Isa Web Component!';
+        }
+      }
+
+      customElements.define('isa-component', IsaComponent);
+    </script>
+    <style>
+      #isaWebComponent {
+        background-color: pink;
+        color: black;
+      }
+    </style>
+    <div id="isaWebComponent">
+      <isa-component></isa-component>
+    </div>
   </body>
 </html>
