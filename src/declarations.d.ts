@@ -6,6 +6,6 @@ declare namespace JSX {
     // When we want to extend or customize JSX.IntrinsicElements, to include additional elements or attributes, we just need to declare this Module Augmentation and we add
     // our own custom intrinsic elements to the JSX namespace.
     // https://goulet.dev/posts/consuming-web-component-react-typescript/
-    'vujo-js-component': any;
+    'js-web-component': any;
   }
 }

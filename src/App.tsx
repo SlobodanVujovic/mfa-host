@@ -43,7 +43,7 @@ function App() {
 
         {/* Adding local Web component to the React component. Da bi ovo radilo moramo imati dodat JS file, u kome je definisan Web componenta, u index.html-u kroz script tag. */}
         <div id='localWebComponent'>
-          <vujo-js-component></vujo-js-component>
+          <js-web-component></js-web-component>
         </div>
       </div>
     </div>

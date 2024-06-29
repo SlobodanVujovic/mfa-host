@@ -11,62 +11,62 @@
     <script type="module" src="/src/main.tsx"></script>
 
     <!-- Web JS component from different module. -->
-    <div id="vujoWebComponent">
-      <vujo-js-component> </vujo-js-component>
+    <div id="jsWebComponent">
+      <js-web-component> </js-web-component>
     </div>
     <style>
-      #vujoWebComponent {
+      #jsWebComponent {
         background-color: blue;
         color: black;
       }
     </style>
     <!-- Mora se ukljuciti JS file u kome je Web komponenta definisana da bi tag mogao da se render-uje. -->
-    <script type="module" src="src/vujoJsWebComponent.js"></script>
+    <script type="module" src="src/jsWebComp.js"></script>
 
     <!-- Web TS component from different module. -->
-    <div id="vujoTsWebComponent">
-      <vujo-ts-component> </vujo-ts-component>
+    <div id="tsWebComp">
+      <ts-web-component> </ts-web-component>
     </div>
     <style>
-      #vujoTsWebComponent {
+      #tsWebComp {
         background-color: aqua;
         color: black;
       }
     </style>
     <!-- Mora se ukljuciti TS file u kome je Web komponenta definisana da bi tag mogao da se render-uje. -->
-    <script type="module" src="src/VujoTsWebComponent.ts"></script>
+    <script type="module" src="src/TsWebComp.ts"></script>
 
-    <!-- Inline web component. -->
+    <!-- Inline Web component. -->
     <script>
-      class IsaComponent extends HTMLElement {
+      class InlineWebComponent extends HTMLElement {
         connectedCallback() {
-          this.innerHTML = 'Hello from Isa Web Component!';
+          this.innerHTML = 'Inline Web Component';
         }
       }
 
-      customElements.define('isa-component', IsaComponent);
+      customElements.define('inline-web-component', InlineWebComponent);
     </script>
     <style>
-      #isaWebComponent {
+      #inlineWebComp {
         background-color: pink;
         color: black;
       }
     </style>
-    <div id="isaWebComponent">
-      <isa-component></isa-component>
+    <div id="inlineWebComp">
+      <inline-web-component></inline-web-component>
     </div>
 
     <!-- Web TS component with React in it, from different module. -->
-    <div id="vujoTsWebComponentWithReact">
-      <vujo-ts-react-component> </vujo-ts-react-component>
+    <div id="tsWebReactCompt">
+      <ts-web-react-component> </ts-web-react-component>
     </div>
     <style>
-      #vujoTsWebComponentWithReact {
+      #tsWebReactCompt {
         background-color: aqua;
         color: black;
       }
     </style>
     <!-- Mora se ukljuciti TS file u kome je Web komponenta definisana da bi tag mogao da se render-uje. -->
-    <script type="module" src="src/VujoTsWebComponentWithReactComponent.tsx"></script>
+    <script type="module" src="src/TsWebCompWithReactComp.tsx"></script>
   </body>
 </html>
