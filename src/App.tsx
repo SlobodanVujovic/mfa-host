@@ -1,10 +1,9 @@
-import { useState, lazy, Suspense } from 'react';
+import { useState, lazy, Suspense, useEffect } from 'react';
 // Docs: https://software-engineering-corner.zuehlke.com/micro-frontend-module-federation-with-vite-for-react
 import './App.css';
 // Name of the component itself must match the name of the component we exposed in mfe-body/vite.config.ts in "exposes" property.
 import RemoteBody from 'tralalaBody/RemoteBody1';
 import RemoteBody2 from 'tralalaBody/RemoteBody2';
-// import vujo-component from 'tralalaBody/vujo-component';
 
 // import RemoteFooter from 'tralalaFooter/RemoteFooter';
 // This way of importing component can be used for both static and dynamic URLs definition in vite.config.ts.
@@ -12,6 +11,16 @@ const RemoteFooter = lazy(() => import('tralalaFooter/RemoteFooter'));
 
 function App() {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const loadComponent = async () => {
+      await import('tralalaBody/RemoteTsWebBody');
+      // Not working. Seems there are 2 React instances in host app.
+      // await import('tralalaBody/RemoteTsWebBodyWithReact');
+    };
+
+    loadComponent();
+  }, []);
 
   return (
     <div id='container'>
@@ -45,6 +54,17 @@ function App() {
         <div id='localWebComponent'>
           <js-web-component></js-web-component>
         </div>
+
+        {/* Adding remote Web component to the React component. Da bi ovo radilo moramo import-ovati expose-ovanu komponentu kroz useEffect hook na linij 15. */}
+        <div id='remoteWebComponent'>
+          <remote-ts-web-component></remote-ts-web-component>
+        </div>
+
+        {/* Adding remote Web component with React component in itself, to the React component. Da bi ovo radilo moramo import-ovati expose-ovanu komponentu kroz useEffect hook na liniji 15. */}
+        {/* Ne radi */}
+        {/* <div id='remoteWebComponentWithReact'>
+          <remote-ts-web-react-component></remote-ts-web-react-component>
+        </div> */}
       </div>
     </div>
   );

@@ -52,3 +52,11 @@
 #localWebComponent {
   background-color: purple;
 }
+
+#remoteWebComponent {
+  background-color: aqua;
+}
+
+#remoteWebComponentWithReact {
+  background-color: blue;
+}

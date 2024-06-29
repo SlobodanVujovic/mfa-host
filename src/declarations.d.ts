@@ -7,5 +7,7 @@ declare namespace JSX {
     // our own custom intrinsic elements to the JSX namespace.
     // https://goulet.dev/posts/consuming-web-component-react-typescript/
     'js-web-component': any;
+    'remote-ts-web-component': any;
+    'remote-ts-web-react-component': any;
   }
 }

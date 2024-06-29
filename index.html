@@ -8,9 +8,9 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="src/main.tsx"></script>
 
-    <!-- Web JS component from different module. -->
+    <!-- Local Web JS component from different module. -->
     <div id="jsWebComponent">
       <js-web-component> </js-web-component>
     </div>
@@ -23,7 +23,7 @@
     <!-- Mora se ukljuciti JS file u kome je Web komponenta definisana da bi tag mogao da se render-uje. -->
     <script type="module" src="src/jsWebComp.js"></script>
 
-    <!-- Web TS component from different module. -->
+    <!-- Local Web TS component from different module. -->
     <div id="tsWebComp">
       <ts-web-component> </ts-web-component>
     </div>
@@ -36,7 +36,7 @@
     <!-- Mora se ukljuciti TS file u kome je Web komponenta definisana da bi tag mogao da se render-uje. -->
     <script type="module" src="src/TsWebComp.ts"></script>
 
-    <!-- Inline Web component. -->
+    <!-- Local Inline Web component. -->
     <script>
       class InlineWebComponent extends HTMLElement {
         connectedCallback() {
@@ -56,7 +56,7 @@
       <inline-web-component></inline-web-component>
     </div>
 
-    <!-- Web TS component with React in it, from different module. -->
+    <!-- Local Web TS component with React in it, from different module. -->
     <div id="tsWebReactCompt">
       <ts-web-react-component> </ts-web-react-component>
     </div>
@@ -68,5 +68,16 @@
     </style>
     <!-- Mora se ukljuciti TS file u kome je Web komponenta definisana da bi tag mogao da se render-uje. -->
     <script type="module" src="src/TsWebCompWithReactComp.tsx"></script>
+
+    <!-- Remote Web TS component. -->
+    <div id="remoteWebComponent">
+      <remote-ts-web-component></remote-ts-web-component>
+    </div>
+    <style>
+      #remoteWebComponent {
+        background-color: red;
+        color: black;
+      }
+    </style>
   </body>
 </html>
