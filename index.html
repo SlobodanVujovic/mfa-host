@@ -10,9 +10,9 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- Web component from different module. -->
+    <!-- Web JS component from different module. -->
     <div id="vujoWebComponent">
-      <vujo-component> </vujo-component>
+      <vujo-js-component> </vujo-js-component>
     </div>
     <style>
       #vujoWebComponent {
@@ -21,7 +21,20 @@
       }
     </style>
     <!-- Mora se ukljuciti JS file u kome je Web komponenta definisana da bi tag mogao da se render-uje. -->
-    <script type="module" src="src/vujoWebComponent.js"></script>
+    <script type="module" src="src/vujoJsWebComponent.js"></script>
+
+    <!-- Web TS component from different module. -->
+    <div id="vujoTsWebComponent">
+      <vujo-ts-component> </vujo-ts-component>
+    </div>
+    <style>
+      #vujoTsWebComponent {
+        background-color: aqua;
+        color: black;
+      }
+    </style>
+    <!-- Mora se ukljuciti TS file u kome je Web komponenta definisana da bi tag mogao da se render-uje. -->
+    <script type="module" src="src/VujoTsWebComponent.ts"></script>
 
     <!-- Inline web component. -->
     <script>
@@ -42,5 +55,18 @@
     <div id="isaWebComponent">
       <isa-component></isa-component>
     </div>
+
+    <!-- Web TS component with React in it, from different module. -->
+    <div id="vujoTsWebComponentWithReact">
+      <vujo-ts-react-component> </vujo-ts-react-component>
+    </div>
+    <style>
+      #vujoTsWebComponentWithReact {
+        background-color: aqua;
+        color: black;
+      }
+    </style>
+    <!-- Mora se ukljuciti TS file u kome je Web komponenta definisana da bi tag mogao da se render-uje. -->
+    <script type="module" src="src/VujoTsWebComponentWithReactComponent.tsx"></script>
   </body>
 </html>
