@@ -50,18 +50,18 @@ function App() {
           <RemoteFooter />
         </Suspense>
 
-        {/* Adding local Web component to the React component. Da bi ovo radilo moramo imati dodat JS file, u kome je definisan Web componenta, u index.html-u kroz script tag. */}
+        {/* Adding local Web component to the React component. In order for this to work we need to add JS file, in which Web component is defined, into index.html-u via script tag. */}
         <div id='localWebComponent'>
           <js-web-component></js-web-component>
         </div>
 
-        {/* Adding remote Web component to the React component. Da bi ovo radilo moramo import-ovati expose-ovanu komponentu kroz useEffect hook na linij 15. */}
+        {/* Adding remote Web component to the React component. In order for this to work we need to import exposed component via useEffect hook at line 15. */}
         <div id='remoteWebComponent'>
           <remote-ts-web-component></remote-ts-web-component>
         </div>
 
-        {/* Adding remote Web component with React component in itself, to the React component. Da bi ovo radilo moramo import-ovati expose-ovanu komponentu kroz useEffect hook na liniji 15. */}
-        {/* Ne radi */}
+        {/* Adding remote Web component with React component in itself, to the React component. In order for this to work we need to import exposed component via useEffect hook at line 15. */}
+        {/* Does not work. */}
         {/* <div id='remoteWebComponentWithReact'>
           <remote-ts-web-react-component></remote-ts-web-react-component>
         </div> */}
