@@ -10,7 +10,7 @@
     <div id="root"></div>
     <script type="module" src="src/main.tsx"></script>
 
-    <!-- Local Web JS component from different module. -->
+    <!-- Local Web JS component from same module. -->
     <div id="jsWebComponent">
       <js-web-component> </js-web-component>
     </div>
@@ -23,7 +23,7 @@
     <!-- We need to add JS file, where Web component is defined, so that custom tag can be rendered. -->
     <script type="module" src="src/jsWebComp.js"></script>
 
-    <!-- Local Web TS component from different module. -->
+    <!-- Local Web TS component from same module. -->
     <div id="tsWebComp">
       <ts-web-component> </ts-web-component>
     </div>
@@ -56,7 +56,7 @@
       <inline-web-component></inline-web-component>
     </div>
 
-    <!-- Local Web TS component with React in it, from different module. -->
+    <!-- Local Web TS component with React in it, from same module. -->
     <div id="tsWebReactCompt">
       <ts-web-react-component> </ts-web-react-component>
     </div>

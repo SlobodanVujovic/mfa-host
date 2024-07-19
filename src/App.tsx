@@ -46,9 +46,11 @@ function App() {
       </div>
 
       <div id='footer'>
-        <Suspense fallback={<div>Loading...</div>}>
-          <RemoteFooter />
-        </Suspense>
+        <div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <RemoteFooter />
+          </Suspense>
+        </div>
 
         {/* Adding local Web component to the React component. In order for this to work we need to add JS file, in which Web component is defined, into index.html-u via script tag. */}
         <div id='localWebComponent'>
