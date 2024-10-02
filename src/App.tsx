@@ -2,7 +2,6 @@ import { useState, lazy, Suspense, useEffect } from 'react';
 // Docs: https://software-engineering-corner.zuehlke.com/micro-frontend-module-federation-with-vite-for-react
 import './App.css';
 // Name of the component itself must match the name of the component we exposed in mfe-body/vite.config.ts in "exposes" property.
-import RemoteBody from 'tralalaBody/RemoteBody1';
 import RemoteBody2 from 'tralalaBody/RemoteBody2';
 
 // import RemoteFooter from 'tralalaFooter/RemoteFooter';
@@ -11,6 +10,7 @@ const RemoteFooter = lazy(() => import('tralalaFooter/RemoteFooter'));
 
 function App() {
   const [count, setCount] = useState(0);
+  const RemoteBody = lazy(() => import('tralalaBody/RemoteBody1'));
 
   useEffect(() => {
     const loadComponent = async () => {
@@ -37,7 +37,9 @@ function App() {
       <div id='body'>
         <h1>Remote repo at {import.meta.env.VITE_TRALALA_BODY_URL}</h1>
         <div id='remoteBodyComponent1'>
-          <RemoteBody />
+          <Suspense fallback={<div>Loading ...</div>}>
+            <RemoteBody />
+          </Suspense>
         </div>
 
         <div id='remoteBodyComponent2'>
